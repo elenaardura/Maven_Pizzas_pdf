@@ -216,9 +216,9 @@ def load(dict_medias, pedidos_info): # Creo la función que va a cargar la predi
     df = df.sort_values('Nº pizzas en proporción todas s', ascending = False) # Ordeno el df para pintar la gráfica de forma ordenada
     titulo = 'Cantidad de ingredientes en función del número de pizzas en proporción a todas tamaño s' # Establezco el título de la gráfica
     # Creo el gráfico de barras
-    pdf.grafico_barras(df['Ingredientes'], df['Nº pizzas en proporción todas s'], titulo, 'Ingredientes', 'Número de pizzas', 'Ingredientes_calidad')
+    pdf.grafico_barras(df['Ingredientes'], df['Nº pizzas en proporción todas s'], titulo, 'Ingredientes', 'Número de pizzas', 'Ingredientes_cantidad')
     # Creo el segundo gráfico de barras
-    titulo2 = 'Cantidad de ingredientes en función del número de pizzas en proporción a todas tamaño s'
+    titulo2 = 'Cantidad de ingredientes en función del número de pizzas en proporción a todas tamaño s (50gr de cada ingrediente/pizza)'
     pdf.grafico_barras(df['Ingredientes'], [numero*50 for numero in df['Nº pizzas en proporción todas s']], titulo2, 'Ingredientes', 'Gramos', 'Ingredientes_cantidad_gramos')
 
     pdf.tabla_basica(df) # Imprimo una tabla en el pdf con los datos de mi dataframe
